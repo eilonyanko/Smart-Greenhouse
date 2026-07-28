@@ -7,9 +7,8 @@ regulates temperature in closed loop, runs a scheduled day/night lighting cycle 
 motorised blind, and gates physical entry behind a keypad — all supervised from a Windows
 desktop application over a serial protocol we designed ourselves.
 
-<!-- Replace with a photo of the finished model -->
 <p align="center">
-  <img src="media/greenhouse.jpg" alt="The completed greenhouse model" width="600">
+  <img src="media/greenhouse.jpg" alt="The completed greenhouse model: four cooling fans, motorised blind frame, and a CD-drive door mechanism" width="560">
 </p>
 
 ![Platform](https://img.shields.io/badge/platform-Arduino%20Mega%202560-00979D)
@@ -33,6 +32,7 @@ desktop application over a serial protocol we designed ourselves.
 - [What I would do differently today](#what-i-would-do-differently-today)
 - [Repository layout](#repository-layout)
 - [Building and running](#building-and-running)
+- [Gallery](#gallery)
 - [Authors and credits](#authors-and-credits)
 
 ---
@@ -352,6 +352,41 @@ non-volatile memory.
 Framework 4.6.1 and WPF, so it needs Windows and the matching targeting pack. The serial
 port name is hard-coded in the `MainWindow` constructor and must be changed to match the
 port the Arduino enumerates as.
+
+## Gallery
+
+<table>
+<tr>
+<td width="33%"><img src="media/shell-construction.jpg" alt="Polycarbonate shell during construction"></td>
+<td width="33%"><img src="media/assembled-model.jpg" alt="The assembled greenhouse"></td>
+<td width="33%"><img src="media/interior.jpg" alt="Looking down into the greenhouse"></td>
+</tr>
+<tr>
+<td>Shell cut from twin-wall polycarbonate, with the fan openings drilled.</td>
+<td>The finished model, roof frame and blind fitted.</td>
+<td>Interior, showing the CD-drive door mechanism.</td>
+</tr>
+<tr>
+<td><img src="media/control-box.jpg" alt="The control box"></td>
+<td><img src="media/control-box-interior.jpg" alt="Inside the control box"></td>
+<td><img src="media/bench-testing.jpg" alt="Bench testing"></td>
+</tr>
+<tr>
+<td>Control box, mounted outside the greenhouse.</td>
+<td>Inside it: the Mega and the soldered prototype board.</td>
+<td>Integration testing on the bench.</td>
+</tr>
+<tr>
+<td><img src="media/tensiometer.jpg" alt="Tensiometer in the plant pot"></td>
+<td><img src="media/water-valve.jpg" alt="Latching valve and reservoir"></td>
+<td><img src="media/bench-setup.jpg" alt="Full setup"></td>
+</tr>
+<tr>
+<td>The remote node: tensiometer in the soil, battery powered.</td>
+<td>Latching valve plumbed to the gravity-fed reservoir.</td>
+<td>Everything running together.</td>
+</tr>
+</table>
 
 ## Authors and credits
 
