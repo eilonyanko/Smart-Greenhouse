@@ -1,7 +1,14 @@
 # GreenDo
 
-The control firmware. Plain C on an Arduino Mega 2560, with no third-party libraries other
-than the keypad driver — every function in the sketch was written for this project.
+The control firmware, running on an Arduino Mega 2560. No third-party libraries other than
+the keypad driver — every function in the sketch was written for this project.
+
+The Arduino toolchain compiles the sketch as C++, but it is written in a C style
+throughout: plain structs, static arrays, function pointers and a raw timer interrupt. The
+two exceptions are the `Keypad` library and the `String` class used by the message parser.
+`String` is also the only place the firmware touches the heap, which makes it the one
+component that could fragment memory over a long run — a fixed-buffer tokeniser would
+remove that risk entirely.
 
 ## Layout
 
