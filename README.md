@@ -13,7 +13,7 @@ desktop application over a serial protocol we designed ourselves.
 </p>
 
 ![Platform](https://img.shields.io/badge/platform-Arduino%20Mega%202560-00979D)
-![Firmware](https://img.shields.io/badge/firmware-C-blue)
+![Firmware](https://img.shields.io/badge/firmware-Arduino%20C%2FC%2B%2B-blue)
 ![Desktop](https://img.shields.io/badge/desktop-C%23%20WPF-512BD4)
 ![Radio](https://img.shields.io/badge/radio-XBee%20802.15.4-orange)
 
@@ -209,8 +209,11 @@ state machine.
 
 ## Firmware design
 
-GreenDo is plain C on the Mega, with no third-party libraries other than the keypad
-driver. It has three parts:
+GreenDo targets the Mega and pulls in no third-party libraries other than the keypad
+driver. The Arduino toolchain compiles everything as C++, but the firmware is deliberately
+written in a C style: plain structs, static arrays, function pointers and a raw timer
+interrupt, with no dynamic allocation, exceptions or runtime type information — none of
+which belong on a part with 8 KB of RAM. It has three parts:
 
 1. **`setup()`** — initialises hardware, drives every actuator to a known state, and
    configures the XBee registers by sending AT command frames over UART1.
@@ -309,9 +312,11 @@ embedded computer systems.
   flag and return in microseconds, with `loop()` doing the work. That single change would
   have prevented the `delay()` problem instead of requiring a timer framework to work
   around it.
-- **No dynamic allocation on an AVR.** The GreenLine parser uses the Arduino `String`
-  class, which fragments a 8 KB heap over long runs. A fixed-buffer tokeniser costs a few
-  more lines and cannot fail this way.
+- **No dynamic allocation on an AVR.** The firmware is otherwise free of heap use, but the
+  GreenLine parser reaches for the Arduino `String` class — a C++ container that
+  reallocates on every append. That single dependency is the only thing that can fragment
+  an 8 KB heap over a long run. A fixed-buffer tokeniser costs a few more lines and cannot
+  fail this way.
 - **Framing needs a checksum.** GreenLine trusts a start character and a line feed. The
   XBee link already carries a checksum; the USB link should too.
 - **Add a watchdog.** With no watchdog, the sixty-second freeze meant a dead greenhouse
@@ -329,7 +334,7 @@ embedded computer systems.
 
 ```
 .
-├── firmware/GreenDo/     Arduino Mega control firmware (C)
+├── firmware/             Arduino Mega control firmware
 ├── desktop/              Windows configuration and telemetry UI (C# / WPF)
 ├── docs/                 Project book, schematics, block diagrams
 └── media/                Photographs of the build
