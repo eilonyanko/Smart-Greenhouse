@@ -379,12 +379,12 @@ port the Arduino enumerates as.
 <tr>
 <td><img src="media/tensiometer.jpg" alt="Tensiometer in the plant pot"></td>
 <td><img src="media/water-valve.jpg" alt="Latching valve and reservoir"></td>
-<td><img src="media/bench-setup.jpg" alt="Full setup"></td>
+<td></td>
 </tr>
 <tr>
 <td>The remote node: tensiometer in the soil, battery powered.</td>
 <td>Latching valve plumbed to the gravity-fed reservoir.</td>
-<td>Everything running together.</td>
+<td></td>
 </tr>
 </table>
 
