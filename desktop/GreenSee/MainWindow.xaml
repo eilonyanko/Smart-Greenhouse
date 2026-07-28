@@ -1,0 +1,157 @@
+﻿<Window x:Class="GreenSee.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:GreenSee"
+        mc:Ignorable="d"
+        Title="GreenSee v1.0.2 Powerd By Eilon and Roie" Height="800" Width="1500">
+    <Grid RenderTransformOrigin="0.479,0.587" Margin="0,10,-0.4,0">
+
+        <Label Content="חכממה" HorizontalAlignment="Left" Height="232" Margin="490,70,0,0" VerticalAlignment="Top" Width="660" Background="{x:Null}" Foreground="#FF207A20" FontSize="200"/>
+
+
+        <Rectangle HorizontalAlignment="Left" Height="271" Margin="1197,119,0,0" Stroke="Black" VerticalAlignment="Top" Width="277"/>
+
+
+        <TextBox x:Name="TimerText" HorizontalAlignment="Left" Height="20" Margin="1387,689,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="60" IsEnabled="False" TextAlignment="Center"/>
+        <ScrollViewer x:Name="DebugScroll" VerticalScrollBarVisibility="Auto" Margin="158,605,671,12.4">
+            <TextBlock x:Name="DebugBlock" HorizontalAlignment="Left" VerticalAlignment="Top" Background="#FFE6EE22" Width = "665"/>
+        </ScrollViewer>
+        <TextBox x:Name="CurrentTemprature" HorizontalAlignment="Left" Height="16" Margin="47,47,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="76" IsEnabled="False" TextAlignment="Center"/>
+        <Label Content="טמפ' בחממה" HorizontalAlignment="Left" Height="25" Margin="48,17,0,0" VerticalAlignment="Top" Width="110"/>
+        <Slider x:Name="TempratureSlider" HorizontalAlignment="Left" Height="374" Margin="67,68,0,0" VerticalAlignment="Top" Width="39" Orientation="Vertical" Maximum="50" BorderBrush="Black" TickPlacement="TopLeft" Foreground="Black" TickFrequency="5" SmallChange="1" BorderThickness="1" IsEnabled="False">
+            <Slider.Background>
+                <LinearGradientBrush EndPoint="0.5,1" MappingMode="RelativeToBoundingBox" StartPoint="0.5,0">
+                    <GradientStop Color="Red" Offset="0"/>
+                    <GradientStop Color="#7F0BBFBC" Offset="0.767"/>
+                </LinearGradientBrush>
+            </Slider.Background>
+        </Slider>
+        <Label Content="0" HorizontalAlignment="Left" Height="26" Margin="50,420,0,0" VerticalAlignment="Top" Width="30" IsEnabled="False"/>
+        <Label Content="5" HorizontalAlignment="Left" Height="26" Margin="50,384,0,0" VerticalAlignment="Top" Width="30" IsEnabled="False"/>
+        <Label Content="10" HorizontalAlignment="Left" Height="26" Margin="45,348,0,0" VerticalAlignment="Top" Width="30" IsEnabled="False"/>
+        <Label Content="15" HorizontalAlignment="Left" Height="26" Margin="45,312,0,0" VerticalAlignment="Top" Width="30" IsEnabled="False"/>
+        <Label Content="20" HorizontalAlignment="Left" Height="26" Margin="45,276,0,0" VerticalAlignment="Top" Width="30" IsEnabled="False"/>
+        <Label Content="25" HorizontalAlignment="Left" Height="26" Margin="45,240,0,0" VerticalAlignment="Top" Width="30" IsEnabled="False"/>
+        <Label Content="30" HorizontalAlignment="Left" Height="26" Margin="45,204,0,0" VerticalAlignment="Top" Width="30" IsEnabled="False"/>
+        <Label Content="35" HorizontalAlignment="Left" Height="26" Margin="45,167,0,0" VerticalAlignment="Top" Width="30" IsEnabled="False"/>
+        <Label Content="40" HorizontalAlignment="Left" Height="26" Margin="45,132,0,0" VerticalAlignment="Top" Width="30" IsEnabled="False"/>
+        <Label Content="45" HorizontalAlignment="Left" Height="26" Margin="45,96,0,0" VerticalAlignment="Top" Width="30" IsEnabled="False" />
+        <Label Content="50" HorizontalAlignment="Left" Height="26" Margin="45,60,0,0" VerticalAlignment="Top" Width="30" IsEnabled="False" />
+        <TextBox x:Name="TempratureHigh" HorizontalAlignment="Left" Height="18" Margin="51,482,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="71" Text="30" TextAlignment="Center"/>
+        <TextBox x:Name="TempratureLow" HorizontalAlignment="Left" Height="18" Margin="51,538,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="71" Text="24" RenderTransformOrigin="0.5,0.5" TextAlignment="Center"/>
+        <Label Content="טמפ' גבוהה" HorizontalAlignment="Left" Height="26" Margin="51,451,0,0" VerticalAlignment="Top" Width="71"/>
+        <Label Content="טמפ' נמוכה" HorizontalAlignment="Left" Height="26" Margin="51,509,0,0" VerticalAlignment="Top" Width="71"/>
+        <TextBox x:Name="ArduinoTime" HorizontalAlignment="Left" Height="104" Margin="626,17,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="360" FontSize="72" IsEnabled="False" TextAlignment="Center"/>
+        <ProgressBar x:Name="BatteryLevel" HorizontalAlignment="Left" Height="37" Margin="1365,15,0,0" VerticalAlignment="Top" Width="110"/>
+        <TextBlock x:Name="BatteryLevelPercentage" HorizontalAlignment="Left" Height="15" Margin="1401,28,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="39" TextAlignment="Center" IsEnabled="False"/>
+        <TextBox x:Name="CurrentVoltage" HorizontalAlignment="Left" Height="16" Margin="257,48,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="76" IsEnabled="False" TextAlignment="Center"/>
+        <Label Content="טנסיומטר" HorizontalAlignment="Left" Height="25" Margin="262,17,0,0" VerticalAlignment="Top" Width="110"/>
+        <Slider x:Name="TensiometerSlider" HorizontalAlignment="Left" Height="374" Margin="277,69,0,0" VerticalAlignment="Top" Width="39" Orientation="Vertical" Maximum="2" BorderBrush="Black" TickPlacement="TopLeft" Foreground="Black" TickFrequency="0.2" BorderThickness="1" IsEnabled="False" Background="#FF26AE26" LargeChange="0.1"/>
+        <Label Content="0" HorizontalAlignment="Left" Height="26" Margin="260,421,0,0" VerticalAlignment="Top" Width="30" IsEnabled="False"/>
+        <Label Content="0.2" HorizontalAlignment="Left" Height="26" Margin="255,385,0,0" VerticalAlignment="Top" Width="30" IsEnabled="False"/>
+        <Label Content="0.4" HorizontalAlignment="Left" Height="26" Margin="255,349,0,0" VerticalAlignment="Top" Width="30" IsEnabled="False"/>
+        <Label Content="0.6" HorizontalAlignment="Left" Height="26" Margin="255,313,0,0" VerticalAlignment="Top" Width="30" IsEnabled="False"/>
+        <Label Content="0.8" HorizontalAlignment="Left" Height="26" Margin="255,277,0,0" VerticalAlignment="Top" Width="30" IsEnabled="False"/>
+        <Label Content="1" HorizontalAlignment="Left" Height="26" Margin="255,241,0,0" VerticalAlignment="Top" Width="30" IsEnabled="False"/>
+        <Label Content="1.2" HorizontalAlignment="Left" Height="26" Margin="255,205,0,0" VerticalAlignment="Top" Width="30" IsEnabled="False"/>
+        <Label Content="1.4" HorizontalAlignment="Left" Height="26" Margin="255,168,0,0" VerticalAlignment="Top" Width="30" IsEnabled="False"/>
+        <Label Content="1.6" HorizontalAlignment="Left" Height="26" Margin="255,133,0,0" VerticalAlignment="Top" Width="30" IsEnabled="False"/>
+        <Label Content="1.8" HorizontalAlignment="Left" Height="26" Margin="255,97,0,0" VerticalAlignment="Top" Width="30" IsEnabled="False" />
+        <Label Content="2" HorizontalAlignment="Left" Height="26" Margin="255,61,0,0" VerticalAlignment="Top" Width="30" IsEnabled="False" />
+        <CheckBox x:Name="SundayCheckbox" Content="CheckBox" HorizontalAlignment="Left" Height="17" Margin="926,418,0,0" VerticalAlignment="Top" Width="16" IsChecked="True"/>
+        <Label Content="א" HorizontalAlignment="Left" Height="27" Margin="924,386,0,0" VerticalAlignment="Top" Width="22" IsEnabled="False"/>
+        <TextBox x:Name="SundayIrigationTime" HorizontalAlignment="Left" Height="20" Margin="915,444,0,0" TextWrapping="Wrap" Text="10:00" VerticalAlignment="Top" Width="39" TextAlignment="Center"/>
+        <TextBox x:Name="SundayIrigationDuration" HorizontalAlignment="Left" Height="20" Margin="921,472,0,0" TextWrapping="Wrap" Text="300" VerticalAlignment="Top" Width="27" TextAlignment="Center"/>
+        <TextBox x:Name="SundayLightStartTime" HorizontalAlignment="Left" Height="20" Margin="915,500,0,0" TextWrapping="Wrap" Text="06:00" VerticalAlignment="Top" Width="39" TextAlignment="Center"/>
+        <Label Content=":שעת השקייה" HorizontalAlignment="Left" Height="27" Margin="960,440,0,0" VerticalAlignment="Top" Width="84" IsEnabled="False" Cursor="No"/>
+        <Label Content=":משך זמן השקייה" HorizontalAlignment="Left" Height="27" Margin="960,472,0,0" VerticalAlignment="Top" Width="103" IsEnabled="False" Cursor="No"/>
+        <Label Content=":שעת התחלת תאורה" HorizontalAlignment="Left" Height="27" Margin="960,498,0,0" VerticalAlignment="Top" Width="136" IsEnabled="False" Cursor="No"/>
+        <CheckBox x:Name="MondayCheckbox" Content="CheckBox" HorizontalAlignment="Left" Height="17" Margin="866,418,0,0" VerticalAlignment="Top" Width="16" IsChecked="True"/>
+        <Label Content="ב" HorizontalAlignment="Left" Height="27" Margin="865,386,0,0" VerticalAlignment="Top" Width="22" IsEnabled="False"/>
+        <TextBox x:Name="MondayIrigationTime" HorizontalAlignment="Left" Height="20" Margin="855,444,0,0" TextWrapping="Wrap" Text="10:00" VerticalAlignment="Top" Width="39" TextAlignment="Center"/>
+        <TextBox x:Name="MondayIrigationDuration" HorizontalAlignment="Left" Height="20" Margin="861,472,0,0" TextWrapping="Wrap" Text="300" VerticalAlignment="Top" Width="27" TextAlignment="Center"/>
+        <TextBox x:Name="MondayLightStartTime" HorizontalAlignment="Left" Height="20" Margin="855,500,0,0" TextWrapping="Wrap" Text="06:00" VerticalAlignment="Top" Width="39" TextAlignment="Center"/>
+        <CheckBox x:Name="TuesdayCheckbox" Content="CheckBox" HorizontalAlignment="Left" Height="17" Margin="806,418,0,0" VerticalAlignment="Top" Width="16" IsChecked="True"/>
+        <Label Content="ג" HorizontalAlignment="Left" Height="27" Margin="806,386,0,0" VerticalAlignment="Top" Width="22" IsEnabled="False"/>
+        <TextBox x:Name="TuesdayIrigationTime" HorizontalAlignment="Left" Height="20" Margin="794,444,0,0" TextWrapping="Wrap" Text="10:00" VerticalAlignment="Top" Width="39" TextAlignment="Center"/>
+        <TextBox x:Name="TuesdayIrigationDuration" HorizontalAlignment="Left" Height="20" Margin="800,472,0,0" TextWrapping="Wrap" Text="300" VerticalAlignment="Top" Width="27" TextAlignment="Center"/>
+        <TextBox x:Name="TuesdayLightStartTime" HorizontalAlignment="Left" Height="20" Margin="794,500,0,0" TextWrapping="Wrap" Text="06:00" VerticalAlignment="Top" Width="39" TextAlignment="Center"/>
+        <CheckBox x:Name="WednesdayCheckbox" Content="CheckBox" HorizontalAlignment="Left" Height="17" Margin="746,418,0,0" VerticalAlignment="Top" Width="16" IsChecked="True"/>
+        <Label Content="ד" HorizontalAlignment="Left" Height="27" Margin="745,386,0,0" VerticalAlignment="Top" Width="22" IsEnabled="False"/>
+        <TextBox x:Name="WednesdayIrigationTime" HorizontalAlignment="Left" Height="20" Margin="735,444,0,0" TextWrapping="Wrap" Text="10:00" VerticalAlignment="Top" Width="39" TextAlignment="Center"/>
+        <TextBox x:Name="WednesdayIrigationDuration" HorizontalAlignment="Left" Height="20" Margin="741,472,0,0" TextWrapping="Wrap" Text="300" VerticalAlignment="Top" Width="27" TextAlignment="Center"/>
+        <TextBox x:Name="WednesdayLightStartTime" HorizontalAlignment="Left" Height="20" Margin="735,500,0,0" TextWrapping="Wrap" Text="06:00" VerticalAlignment="Top" Width="39" TextAlignment="Center"/>
+        <CheckBox x:Name="ThursdayCheckbox" Content="CheckBox" HorizontalAlignment="Left" Height="17" Margin="686,418,0,0" VerticalAlignment="Top" Width="16" IsChecked="True"/>
+        <Label Content="ה" HorizontalAlignment="Left" Height="27" Margin="685,386,0,0" VerticalAlignment="Top" Width="22" IsEnabled="False"/>
+        <TextBox x:Name="ThursdayIrigationTime" HorizontalAlignment="Left" Height="20" Margin="675,444,0,0" TextWrapping="Wrap" Text="10:00" VerticalAlignment="Top" Width="39" TextAlignment="Center"/>
+        <TextBox x:Name="ThursdayIrigationDuration" HorizontalAlignment="Left" Height="20" Margin="681,472,0,0" TextWrapping="Wrap" Text="300" VerticalAlignment="Top" Width="27" TextAlignment="Center"/>
+        <TextBox x:Name="ThursdayLightStartTime" HorizontalAlignment="Left" Height="20" Margin="675,500,0,0" TextWrapping="Wrap" Text="06:00" VerticalAlignment="Top" Width="39" TextAlignment="Center"/>
+        <CheckBox x:Name="FridayCheckbox" Content="CheckBox" HorizontalAlignment="Left" Height="17" Margin="626,418,0,0" VerticalAlignment="Top" Width="16" IsChecked="True"/>
+        <Label Content="ו" HorizontalAlignment="Left" Height="27" Margin="627,386,0,0" VerticalAlignment="Top" Width="22" IsEnabled="False"/>
+        <TextBox x:Name="FridayIrigationTime" HorizontalAlignment="Left" Height="20" Margin="615,444,0,0" TextWrapping="Wrap" Text="10:00" VerticalAlignment="Top" Width="39" TextAlignment="Center"/>
+        <TextBox x:Name="FridayIrigationDuration" HorizontalAlignment="Left" Height="20" Margin="621,472,0,0" TextWrapping="Wrap" Text="300" VerticalAlignment="Top" Width="27" TextAlignment="Center"/>
+        <TextBox x:Name="FridayLightStartTime" HorizontalAlignment="Left" Height="20" Margin="615,500,0,0" TextWrapping="Wrap" Text="06:00" VerticalAlignment="Top" Width="39" TextAlignment="Center"/>
+        <CheckBox x:Name="SaturdayCheckbox" Content="CheckBox" HorizontalAlignment="Left" Height="17" Margin="566,418,0,0" VerticalAlignment="Top" Width="16" IsChecked="True"/>
+        <Label Content="ש" HorizontalAlignment="Left" Height="27" Margin="565,386,0,0" VerticalAlignment="Top" Width="22" IsEnabled="False"/>
+        <TextBox x:Name="SaturdayIrigationTime" HorizontalAlignment="Left" Height="20" Margin="554,444,0,0" TextWrapping="Wrap" Text="10:00" VerticalAlignment="Top" Width="39" TextAlignment="Center"/>
+        <TextBox x:Name="SaturdayIrigationDuration" HorizontalAlignment="Left" Height="20" Margin="560,472,0,0" TextWrapping="Wrap" Text="300" VerticalAlignment="Top" Width="27" TextAlignment="Center"/>
+        <TextBox x:Name="SaturdayLightStartTime" HorizontalAlignment="Left" Height="20" Margin="554,500,0,0" TextWrapping="Wrap" Text="06:00" VerticalAlignment="Top" Width="39" TextAlignment="Center"/>
+        <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="178" Margin="532,386,0,0" VerticalAlignment="Top" Width="552" OpacityMask="Black"/>
+        <Label Content="פרוטוקול חממה" HorizontalAlignment="Left" Height="32" Margin="946,372,0,0" VerticalAlignment="Top" Width="98" Background="White"/>
+        <Button x:Name="ConfigurationButton" Content="שלח קונפיגורציה" HorizontalAlignment="Left" Height="51" Margin="1191,658,0,0" VerticalAlignment="Top" Width="181" Click="ConfigurationButton_Click" FontSize="20"/>
+        <Button x:Name="FansTest" Content="Fans On" HorizontalAlignment="Left" Height="44" Margin="1219,133,0,0" VerticalAlignment="Top" Width="235" Click="FansTest_Click" FontSize="20"/>
+        <Button x:Name="LightsTest" Content="Lights On" HorizontalAlignment="Left" Height="49" Margin="1219,201,0,0" VerticalAlignment="Top" Width="235" Click="LightsTest_Click" FontSize="20"/>
+        <Button x:Name="ShutterTestDown" Content="Shutter Down" HorizontalAlignment="Left" Height="37" Margin="1349,270,0,0" VerticalAlignment="Top" Width="105" Click="ShutterTestDown_Click" FontSize="16"/>
+        <Button x:Name="TestWaterValve" Content="Open Valve" HorizontalAlignment="Left" Height="42" Margin="1219,327,0,0" VerticalAlignment="Top" Width="235" Click="TestWaterValve_Click" FontSize="20"/>
+        <Label Content="בדיקת מערכות" HorizontalAlignment="Left" Height="28" Margin="1347,97,0,0" VerticalAlignment="Top" Width="116" Background="White" FontSize="16"/>
+        <TextBox x:Name="CurrentLux" HorizontalAlignment="Left" Height="16" Margin="155,47,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="76" IsEnabled="False" TextAlignment="Center"/>
+        <Label Content="תאורה בחממה" HorizontalAlignment="Left" Height="25" Margin="150,17,0,0" VerticalAlignment="Top" Width="110"/>
+        <Slider x:Name="LuxSlider" HorizontalAlignment="Left" Height="374" Margin="175,68,0,0" VerticalAlignment="Top" Width="39" Orientation="Vertical" Maximum="1000" BorderBrush="Black" TickPlacement="TopLeft" Foreground="Black" TickFrequency="100" SmallChange="5" BorderThickness="1" IsEnabled="False" LargeChange="100">
+            <Slider.Background>
+                <LinearGradientBrush EndPoint="0.5,1" MappingMode="RelativeToBoundingBox" StartPoint="0.5,0">
+                    <GradientStop Color="#FFFFEE00" Offset="0"/>
+                    <GradientStop Color="Gray" Offset="0.767"/>
+                </LinearGradientBrush>
+            </Slider.Background>
+        </Slider>
+        <Label Content="0" HorizontalAlignment="Left" Height="26" Margin="158,420,0,0" VerticalAlignment="Top" Width="30" IsEnabled="False"/>
+        <Label Content="100" HorizontalAlignment="Left" Height="26" Margin="147,384,0,0" VerticalAlignment="Top" Width="30" IsEnabled="False"/>
+        <Label Content="200" HorizontalAlignment="Left" Height="26" Margin="147,348,0,0" VerticalAlignment="Top" Width="30" IsEnabled="False"/>
+        <Label Content="300" HorizontalAlignment="Left" Height="26" Margin="147,312,0,0" VerticalAlignment="Top" Width="30" IsEnabled="False"/>
+        <Label Content="400" HorizontalAlignment="Left" Height="26" Margin="147,276,0,0" VerticalAlignment="Top" Width="30" IsEnabled="False"/>
+        <Label Content="500" HorizontalAlignment="Left" Height="26" Margin="147,240,0,0" VerticalAlignment="Top" Width="30" IsEnabled="False"/>
+        <Label Content="600" HorizontalAlignment="Left" Height="26" Margin="147,204,0,0" VerticalAlignment="Top" Width="30" IsEnabled="False"/>
+        <Label Content="700" HorizontalAlignment="Left" Height="26" Margin="147,167,0,0" VerticalAlignment="Top" Width="30" IsEnabled="False"/>
+        <Label Content="800" HorizontalAlignment="Left" Height="26" Margin="147,132,0,0" VerticalAlignment="Top" Width="30" IsEnabled="False"/>
+        <Label Content="900" HorizontalAlignment="Left" Height="26" Margin="147,96,0,0" VerticalAlignment="Top" Width="30" IsEnabled="False" />
+        <Label Content="1000" HorizontalAlignment="Left" Height="26" Margin="140,60,0,0" VerticalAlignment="Top" Width="43" IsEnabled="False" />
+        <TextBox x:Name="LuxLow" HorizontalAlignment="Left" Height="18" Margin="160,482,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="71" Text="500" RenderTransformOrigin="0.5,0.5" TextAlignment="Center"/>
+        <Label Content="סף תאורה" HorizontalAlignment="Left" Height="26" Margin="163,451,0,0" VerticalAlignment="Top" Width="78"/>
+        <TextBox x:Name="RSSI" HorizontalAlignment="Left" Height="16" Margin="351,47,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="76" IsEnabled="False" TextAlignment="Center" Text="אין קליטה"/>
+        <Label Content="RSSI [-dBm]" HorizontalAlignment="Left" Height="25" Margin="353,17,0,0" VerticalAlignment="Top" Width="81"/>
+        <Rectangle x:Name="Rect1" Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="14" Margin="353,78,0,0" Stroke="Black" VerticalAlignment="Top" Width="74"/>
+        <Rectangle x:Name="Rect2" Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="14" Margin="353,98,0,0" Stroke="Black" VerticalAlignment="Top" Width="74"/>
+        <Rectangle x:Name="Rect3" Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="14" Margin="353,118,0,0" Stroke="Black" VerticalAlignment="Top" Width="74"/>
+        <Rectangle x:Name="Rect4" Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="14" Margin="353,138,0,0" Stroke="Black" VerticalAlignment="Top" Width="74"/>
+        <Button x:Name="ShutterTestUp" Content="Shutter Up" HorizontalAlignment="Left" Height="37" Margin="1219,271,0,0" VerticalAlignment="Top" Width="105" Click="ShutterTestUp_Click" FontSize="16"/>
+        <TextBox x:Name="DryLevel" HorizontalAlignment="Left" Height="18" Margin="277,482,0,0" TextWrapping="Wrap" Text="0.7" VerticalAlignment="Top" Width="39" TextAlignment="Center"/>
+        <Label Content="סף יובש באדמה" HorizontalAlignment="Left" Height="26" Margin="255,451,0,0" VerticalAlignment="Top" Width="102"/>
+        <TextBox x:Name="SundayLightEndTime" HorizontalAlignment="Left" Height="20" Margin="915,529,0,0" TextWrapping="Wrap" Text="20:00" VerticalAlignment="Top" Width="39" TextAlignment="Center"/>
+        <Label Content=":שעת סיום תאורה" HorizontalAlignment="Left" Height="27" Margin="960,527,0,0" VerticalAlignment="Top" Width="136" IsEnabled="False" Cursor="No"/>
+        <TextBox x:Name="MondayLightEndTime" HorizontalAlignment="Left" Height="20" Margin="855,529,0,0" TextWrapping="Wrap" Text="20:00" VerticalAlignment="Top" Width="39" TextAlignment="Center"/>
+        <TextBox x:Name="TuesdayLightEndTime" HorizontalAlignment="Left" Height="20" Margin="794,529,0,0" TextWrapping="Wrap" Text="20:00" VerticalAlignment="Top" Width="39" TextAlignment="Center"/>
+        <TextBox x:Name="WednesdayLightEndTime" HorizontalAlignment="Left" Height="20" Margin="735,529,0,0" TextWrapping="Wrap" Text="20:00" VerticalAlignment="Top" Width="39" TextAlignment="Center"/>
+        <TextBox x:Name="ThursdayLightEndTime" HorizontalAlignment="Left" Height="20" Margin="675,529,0,0" TextWrapping="Wrap" Text="20:00" VerticalAlignment="Top" Width="39" TextAlignment="Center"/>
+        <TextBox x:Name="FridayLightEndTime" HorizontalAlignment="Left" Height="20" Margin="615,529,0,0" TextWrapping="Wrap" Text="20:00" VerticalAlignment="Top" Width="39" TextAlignment="Center"/>
+        <TextBox x:Name="SaturdayLightEndTime" HorizontalAlignment="Left" Height="20" Margin="554,529,0,0" TextWrapping="Wrap" Text="20:00" VerticalAlignment="Top" Width="39" TextAlignment="Center"/>
+        <Label Content="Debug window" HorizontalAlignment="Left" Height="29" Margin="157,571,0,0" VerticalAlignment="Top" Width="103"/>
+        <Label Content="השהיית עליית תריס" HorizontalAlignment="Left" Height="27" Margin="1326,571,0,0" VerticalAlignment="Top" Width="121"/>
+        <Label Content="השהיית ירידת תריס" HorizontalAlignment="Left" Height="27" Margin="1326,604,0,0" VerticalAlignment="Top" Width="121"/>
+        <TextBox x:Name="ShutterUpDelay" HorizontalAlignment="Left" Height="18" Margin="1277,576,0,0" TextWrapping="Wrap" Text="7" VerticalAlignment="Top" Width="30" TextAlignment="Center"/>
+        <TextBox x:Name="ShutterDownDelay" HorizontalAlignment="Left" Height="18" Margin="1277,608,0,0" TextWrapping="Wrap" Text="6" VerticalAlignment="Top" Width="30" TextAlignment="Center"/>
+
+
+    </Grid>
+</Window>
